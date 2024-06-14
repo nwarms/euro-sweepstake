@@ -1,6 +1,7 @@
+'use client';
 import React, { ReactNode } from 'react'
 
-type Props = {onClick:()=>void; text?:string; children:ReactNode}
+type Props = {onClick?:()=>void; text?:string; children:ReactNode, link?:string}
 
 export default function Button({onClick, text, children}: Props) {
   return (
