@@ -1,0 +1,106 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int            @id @default(autoincrement())
+  username      String
+  teamsAssigned TeamAssigned[]
+}
+
+model Team {
+  id            Int             @id @default(autoincrement())
+  name          String
+  icon_url      String
+  team_assigned TeamAssigned[]
+  groupId       Int?
+  group         Group?          @relation(fields: [groupId], references: [id])
+  homeMatches   Match[]         @relation("HomeMatches")
+  awayMatches   Match[]         @relation("AwayMatches")
+  standings     Standings?
+  Qualification Qualification[]
+}
+
+model TeamAssigned {
+  id      Int  @id @default(autoincrement())
+  user    User @relation(fields: [user_id], references: [id])
+  user_id Int
+  team    Team @relation(fields: [team_id], references: [id])
+  team_id Int
+}
+
+model Group {
+  id           Int         @id @default(autoincrement())
+  name         String
+  tournamentId Int
+  tournament   Tournament  @relation(fields: [tournamentId], references: [id])
+  teams        Team[]
+  standings    Standings[]
+}
+
+model Tournament {
+  id     Int     @id @default(autoincrement())
+  name   String
+  groups Group[]
+  stages Stage[]
+}
+
+model Stage {
+  id            Int             @id @default(autoincrement())
+  name          String
+  tournamentId  Int
+  tournament    Tournament      @relation(fields: [tournamentId], references: [id])
+  matches       Match[]
+  Qualification Qualification[]
+}
+
+model Match {
+  id                  Int      @id @default(autoincrement())
+  matchDate           DateTime
+  homeTeamScore       Int
+  awayTeamScore       Int
+  location            String?
+  homeTeamId          Int
+  awayTeamId          Int
+  homeTeam            Team     @relation("HomeMatches", fields: [homeTeamId], references: [id])
+  awayTeam            Team     @relation("AwayMatches", fields: [awayTeamId], references: [id])
+  stageId             Int
+  stage               Stage    @relation(fields: [stageId], references: [id])
+  previousHomeMatchId Int?
+  previousAwayMatchId Int?
+  previousHomeMatch   Match?   @relation("PreviousHomeMatch", fields: [previousHomeMatchId], references: [id])
+  previousAwayMatch   Match?   @relation("PreviousAwayMatch", fields: [previousAwayMatchId], references: [id])
+  NextHomeMatch       Match[]  @relation("PreviousHomeMatch")
+  NextAwayMatch       Match[]  @relation("PreviousAwayMatch")
+}
+
+model Standings {
+  id             Int   @id @default(autoincrement())
+  groupId        Int
+  group          Group @relation(fields: [groupId], references: [id])
+  teamId         Int   @unique
+  team           Team  @relation(fields: [teamId], references: [id])
+  points         Int   @default(0)
+  goalsFor       Int   @default(0)
+  goalsAgainst   Int   @default(0)
+  goalDifference Int   @default(0)
+}
+
+model Qualification {
+  id      Int   @id @default(autoincrement())
+  teamId  Int
+  team    Team  @relation(fields: [teamId], references: [id])
+  stageId Int
+  stage   Stage @relation(fields: [stageId], references: [id])
+}
