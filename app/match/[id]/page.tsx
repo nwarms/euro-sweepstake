@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import TeamComponent from "@/Components/TeamComponent";
 import UserComponent from "@/Components/UserComponent";
 import prisma from "@/lib/prisma";
+import { Time } from "@/Components/Time";
 
 
 export default async function Page({ params }: { params: { id: string } }) {
@@ -35,7 +36,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                 </div>
             </h1>
             <h2>{match.location}</h2>
-            <h2>{match.matchDate.toLocaleString()}</h2>
+            <h2><Time time={match.matchDate}/></h2>
             <h2>{match.stage.name}</h2>
         </div >
     );
