@@ -1,22 +1,23 @@
 import React from 'react'
-import { Match } from '@prisma/client';
 import { MatchFull } from '@/Types/prismaExtendedTypes';
+import Link from 'next/link';
 
 type Props = {
     match?: MatchFull;
 }
 
 export default function MatchComponent({ match }: Props) {
-    const divClassName = 'flex justify-between gap-2 bg-inherit'
+    const divClassName = 'grid'
     if(!match){
         return <div className={divClassName}>Match not found</div>
     }
     const matchHasScore = match.homeTeamScore >= 0 && match.awayTeamScore >= 0;
     return (
-        <div key={match.id} className={divClassName}>
-            <h1>{matchHasScore ? `${match.homeTeam.name} ${match.homeTeamScore} - ${match.awayTeamScore} ${match.awayTeam.name}` : `${match.homeTeam.name} vs ${match.awayTeam.name}`}</h1>
-            <h2>{match.location}</h2>
-            <h2>{match.stage.name}</h2>
-        </div>
+        <Link href={`/match/${match.id}`} key={match.id} className="grid grid-cols-subgrid col-span-4 hover:bg-slate-600">
+            <h1 className=' col-start-1 bg-inherit'>{matchHasScore ? `${match.homeTeam.name} ${match.homeTeamScore} - ${match.awayTeamScore} ${match.awayTeam.name}` : `${match.homeTeam.name} vs ${match.awayTeam.name}`}</h1>
+            <h2 className=' col-start-2 bg-inherit'>{match.location}</h2>
+            <h2 className=' col-start-3 bg-inherit'>{match.stage.name}</h2>
+            <h2 className=' col-start-4 bg-inherit'>{(match.matchDate.toLocaleString())}</h2>
+        </Link>
     )
 }
