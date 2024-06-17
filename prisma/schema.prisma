@@ -15,13 +15,13 @@ datasource db {
 
 model User {
   id            Int            @id @default(autoincrement())
-  username      String
+  username      String         @unique
   teamsAssigned TeamAssigned[]
 }
 
 model Team {
   id            Int             @id @default(autoincrement())
-  name          String
+  name          String          @unique
   icon_url      String
   team_assigned TeamAssigned[]
   groupId       Int?
@@ -43,24 +43,13 @@ model TeamAssigned {
 model Group {
   id           Int         @id @default(autoincrement())
   name         String
-  tournamentId Int
-  tournament   Tournament  @relation(fields: [tournamentId], references: [id])
   teams        Team[]
   standings    Standings[]
-}
-
-model Tournament {
-  id     Int     @id @default(autoincrement())
-  name   String
-  groups Group[]
-  stages Stage[]
 }
 
 model Stage {
   id            Int             @id @default(autoincrement())
   name          String
-  tournamentId  Int
-  tournament    Tournament      @relation(fields: [tournamentId], references: [id])
   matches       Match[]
   Qualification Qualification[]
 }
@@ -77,12 +66,6 @@ model Match {
   awayTeam            Team     @relation("AwayMatches", fields: [awayTeamId], references: [id])
   stageId             Int
   stage               Stage    @relation(fields: [stageId], references: [id])
-  previousHomeMatchId Int?
-  previousAwayMatchId Int?
-  previousHomeMatch   Match?   @relation("PreviousHomeMatch", fields: [previousHomeMatchId], references: [id])
-  previousAwayMatch   Match?   @relation("PreviousAwayMatch", fields: [previousAwayMatchId], references: [id])
-  NextHomeMatch       Match[]  @relation("PreviousHomeMatch")
-  NextAwayMatch       Match[]  @relation("PreviousAwayMatch")
 }
 
 model Standings {
