@@ -1,10 +1,11 @@
-import TeamComponent from "@/Components/TeamComponent";
 import { notFound } from "next/navigation";
-import { useRouter } from "next/router";
 import Image from "next/image";
-import { Match } from "@prisma/client";
 import MatchComponent from "@/Components/MatchComponent";
-import { MatchFull } from "@/Types/prismaExtendedTypes";
+import { MatchFull, TeamAssignedFull } from "@/Types/prismaExtendedTypes";
+import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode } from "react";
+import { TeamAssigned } from "@prisma/client";
+import UserComponent from "@/Components/UserComponent";
+import { getAllMatchesForTeam, sortMatches } from "@/Helpers/MatchHelper";
 
 export default async function Page({ params }: { params: { id: string } }) {
     const id = params.id;
@@ -13,28 +14,35 @@ export default async function Page({ params }: { params: { id: string } }) {
             OR: [{ id: parseInt(id) }, { name: id }]
         },
         include: {
-            team_assigned: {
-                include:{
-                    user:true
+            teamAssigned: {
+                include: {
+                    user: true,
+                    team: true
                 }
             },
             group: {
-                include:{
-                    teams:true
+                include: {
+                    teams: true
                 }
             },
             homeMatches: {
-                include:{
-                    homeTeam:true,
-                    awayTeam:true,
-                    stage:true
+                include: {
+                    homeTeam: true,
+                    awayTeam: true,
+                    stage: true
+                },
+                orderBy: {
+                    matchDate: 'asc'
                 }
             },
             awayMatches: {
-                include:{
-                    homeTeam:true,
-                    awayTeam:true,
-                    stage:true
+                include: {
+                    homeTeam: true,
+                    awayTeam: true,
+                    stage: true
+                },
+                orderBy: {
+                    matchDate: 'asc'
                 }
             }
         }
@@ -42,17 +50,22 @@ export default async function Page({ params }: { params: { id: string } }) {
     if (!team) {
         return notFound();
     }
-    const matches:MatchFull[] = team.homeMatches.concat(team.awayMatches);
+    const matches: MatchFull[] = sortMatches(getAllMatchesForTeam(team));
     return (
-        <div>
+        <div className="p-2">
             <h1>{team.name}</h1>
-            <Image src={team.icon_url} alt={`Flag of ${team.name}`} height={30} width={30} />
+            <Image src={team.iconUrl} alt={`Flag of ${team.name}`} height={30} width={30} />
             <h2>Matches</h2>
-            {matches.map((match) => 
-                <MatchComponent match={match} key={match.id}/>
-            )}
-            <h2>Group</h2>
+            <div className="grid grid-cols-4">
+                {matches.map((match) =>
+                    <MatchComponent match={match} key={match.id} />
+                )}
+            </div>
+            <h2>{team.group?.name}</h2>
             <h2>Users</h2>
+            <ul>
+                {team.teamAssigned.map((teamAssigned: TeamAssignedFull) => <UserComponent user={teamAssigned.user} key={teamAssigned.id} />)}
+            </ul>
         </div>
     );
 }
