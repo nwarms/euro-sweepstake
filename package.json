@@ -9,7 +9,7 @@
     "lint": "next lint",
     "resetDb": "npx prisma db push --force-reset && npx prisma db seed",
     "postinstall": "prisma generate",
-    "seedDb": "prisma db seed"
+    "seed": "prisma db seed"
   },
   "dependencies": {
     "@prisma/client": "^5.13.0",
