@@ -6,8 +6,11 @@ type Props = {}
 
 function Navbar({}: Props) {
   return (
-    <nav className='flex w-full bg-white text-black gap-5'>
+    <nav className='flex w-full bg-white text-black'>
         <NavbarLink href='/'>Euro 2024 Sweepstake</NavbarLink>
+        <NavbarLink href='/team'>Teams</NavbarLink>
+        <NavbarLink href='/match'>Matches</NavbarLink>
+        <NavbarLink href='/user'>Users</NavbarLink>
     </nav>
   )
 }
@@ -18,7 +21,7 @@ type NavbarLinkProps = {
 }
 
 function NavbarLink({href, children}:NavbarLinkProps): React.JSX.Element{
-    return (<Link href={href} className='bg-white text-black'>{children}</Link>)
+    return (<Link href={href} className='bg-white text-black hover:bg-black hover:text-white px-2'>{children}</Link>)
 }
 
 export default Navbar
