@@ -2,6 +2,7 @@ import Grid from "@/Components/Grid";
 import TeamComponent from "@/Components/TeamComponent";
 import UserComponent from "@/Components/UserComponent";
 import Link from "next/link";
+import prisma from "@/lib/prisma";
 
 export default async function Page() {
     const user = await prisma.user.findMany({include:{

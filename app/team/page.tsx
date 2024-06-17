@@ -1,5 +1,6 @@
 import Grid from "@/Components/Grid";
 import TeamComponent from "@/Components/TeamComponent";
+import prisma from "@/lib/prisma";
 
 export default async function Page() {
     const teams = await prisma.team.findMany();

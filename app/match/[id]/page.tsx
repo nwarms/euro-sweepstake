@@ -1,9 +1,8 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
-import MatchComponent from "@/Components/MatchComponent";
-import { MatchFull } from "@/Types/prismaExtendedTypes";
 import TeamComponent from "@/Components/TeamComponent";
 import UserComponent from "@/Components/UserComponent";
+import prisma from "@/lib/prisma";
+
 
 export default async function Page({ params }: { params: { id: string } }) {
     const id = params.id;

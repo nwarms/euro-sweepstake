@@ -3,6 +3,7 @@ import MatchComponent from "@/Components/MatchComponent";
 import { getAllMatchesForTeam, sortMatches } from "@/Helpers/MatchHelper";
 import TeamComponent from "@/Components/TeamComponent";
 import Grid from "@/Components/Grid";
+import prisma from "@/lib/prisma";
 
 export default async function Page({ params }: { params: { id: string } }) {
     const id = params.id;

@@ -2,10 +2,10 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import MatchComponent from "@/Components/MatchComponent";
 import { MatchFull, TeamAssignedFull } from "@/Types/prismaExtendedTypes";
-import { Key, ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode } from "react";
-import { TeamAssigned } from "@prisma/client";
 import UserComponent from "@/Components/UserComponent";
 import { getAllMatchesForTeam, sortMatches } from "@/Helpers/MatchHelper";
+import prisma from "@/lib/prisma";
+
 
 export default async function Page({ params }: { params: { id: string } }) {
     const id = params.id;
