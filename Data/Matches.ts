@@ -3,7 +3,7 @@ import { Match } from "@prisma/client";
 const Matches: Match[] = [
     {
         id: 1,
-        matchDate: new Date("2024-06-14T20:00:00.000Z"),
+        matchDate: new Date("2024-06-14T20:00:00.000+02:00"),
         homeTeamScore: 5,
         awayTeamScore: 1,
         location: 'Munich',
@@ -13,7 +13,7 @@ const Matches: Match[] = [
     },
     {
         id: 2,
-        matchDate: new Date("2024-06-15T14:00:00.000Z"),
+        matchDate: new Date("2024-06-15T14:00:00.000+02:00"),
         homeTeamScore: 1,
         awayTeamScore: 3,
         location: 'Cologne',
@@ -23,7 +23,7 @@ const Matches: Match[] = [
     },
     {
         id: 3,
-        matchDate: new Date("2024-06-15T17:00:00.000Z"),
+        matchDate: new Date("2024-06-15T17:00:00.000+02:00"),
         homeTeamScore: 3,
         awayTeamScore: 0,
         location: 'Berlin',
@@ -33,7 +33,7 @@ const Matches: Match[] = [
     },
     {
         id: 4,
-        matchDate: new Date("2024-06-15T20:00:00.000Z"),
+        matchDate: new Date("2024-06-15T20:00:00.000+02:00"),
         homeTeamScore: 2,
         awayTeamScore: 1,
         location: 'Dortmund',
@@ -43,7 +43,7 @@ const Matches: Match[] = [
     },
     {
         id: 5,
-        matchDate: new Date("2024-06-16T14:00:00.000Z"),
+        matchDate: new Date("2024-06-16T14:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Hamburg',
@@ -53,7 +53,7 @@ const Matches: Match[] = [
     },
     {
         id: 6,
-        matchDate: new Date("2024-06-16T17:00:00.000Z"),
+        matchDate: new Date("2024-06-16T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Stuttgart',
@@ -63,7 +63,7 @@ const Matches: Match[] = [
     },
     {
         id: 7,
-        matchDate: new Date("2024-06-16T20:00:00.000Z"),
+        matchDate: new Date("2024-06-16T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Gelsenkirchen',
@@ -73,7 +73,7 @@ const Matches: Match[] = [
     },
     {
         id: 8,
-        matchDate: new Date("2024-06-17T14:00:00.000Z"),
+        matchDate: new Date("2024-06-17T14:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Munich',
@@ -83,7 +83,7 @@ const Matches: Match[] = [
     },
     {
         id: 9,
-        matchDate: new Date("2024-06-17T17:00:00.000Z"),
+        matchDate: new Date("2024-06-17T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Frankfurt',
@@ -93,7 +93,7 @@ const Matches: Match[] = [
     },
     {
         id: 10,
-        matchDate: new Date("2024-06-17T20:00:00.000Z"),
+        matchDate: new Date("2024-06-17T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Düsseldorf',
@@ -103,7 +103,7 @@ const Matches: Match[] = [
     },
     {
         id: 11,
-        matchDate: new Date("2024-06-18T17:00:00.000Z"),
+        matchDate: new Date("2024-06-18T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Dortmund',
@@ -113,7 +113,7 @@ const Matches: Match[] = [
     },
     {
         id: 12,
-        matchDate: new Date("2024-06-18T20:00:00.000Z"),
+        matchDate: new Date("2024-06-18T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Leipzig',
@@ -123,7 +123,7 @@ const Matches: Match[] = [
     },
     {
         id: 13,
-        matchDate: new Date("2024-06-19T14:00:00.000Z"),
+        matchDate: new Date("2024-06-19T14:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Hamburg',
@@ -133,7 +133,7 @@ const Matches: Match[] = [
     },
     {
         id: 14,
-        matchDate: new Date("2024-06-19T17:00:00.000Z"),
+        matchDate: new Date("2024-06-19T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Stuttgart',
@@ -143,7 +143,7 @@ const Matches: Match[] = [
     },
     {
         id: 15,
-        matchDate: new Date("2024-06-19T20:00:00.000Z"),
+        matchDate: new Date("2024-06-19T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Cologne',
@@ -153,7 +153,7 @@ const Matches: Match[] = [
     },
     {
         id: 16,
-        matchDate: new Date("2024-06-20T14:00:00.000Z"),
+        matchDate: new Date("2024-06-20T14:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Munich',
@@ -163,7 +163,7 @@ const Matches: Match[] = [
     },
     {
         id: 17,
-        matchDate: new Date("2024-06-20T17:00:00.000Z"),
+        matchDate: new Date("2024-06-20T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Frankfurt',
@@ -173,7 +173,7 @@ const Matches: Match[] = [
     },
     {
         id: 18,
-        matchDate: new Date("2024-06-20T20:00:00.000Z"),
+        matchDate: new Date("2024-06-20T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Gelsenkirchen',
@@ -183,7 +183,7 @@ const Matches: Match[] = [
     },
     {
         id: 19,
-        matchDate: new Date("2024-06-21T14:00:00.000Z"),
+        matchDate: new Date("2024-06-21T14:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Düsseldorf',
@@ -193,7 +193,7 @@ const Matches: Match[] = [
     },
     {
         id: 20,
-        matchDate: new Date("2024-06-21T17:00:00.000Z"),
+        matchDate: new Date("2024-06-21T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Berlin',
@@ -203,7 +203,7 @@ const Matches: Match[] = [
     },
     {
         id: 21,
-        matchDate: new Date("2024-06-21T20:00:00.000Z"),
+        matchDate: new Date("2024-06-21T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Leipzig',
@@ -213,7 +213,7 @@ const Matches: Match[] = [
     },
     {
         id: 22,
-        matchDate: new Date("2024-06-22T14:00:00.000Z"),
+        matchDate: new Date("2024-06-22T14:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Hamburg',
@@ -223,7 +223,7 @@ const Matches: Match[] = [
     },
     {
         id: 23,
-        matchDate: new Date("2024-06-22T17:00:00.000Z"),
+        matchDate: new Date("2024-06-22T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Dortmund',
@@ -233,7 +233,7 @@ const Matches: Match[] = [
     },
     {
         id: 24,
-        matchDate: new Date("2024-06-22T20:00:00.000Z"),
+        matchDate: new Date("2024-06-22T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Cologne',
@@ -243,7 +243,7 @@ const Matches: Match[] = [
     },
     {
         id: 25,
-        matchDate: new Date("2024-06-23T20:00:00.000Z"),
+        matchDate: new Date("2024-06-23T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Frankfurt',
@@ -253,7 +253,7 @@ const Matches: Match[] = [
     },
     {
         id: 26,
-        matchDate: new Date("2024-06-23T20:00:00.000Z"),
+        matchDate: new Date("2024-06-23T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Stuttgart',
@@ -263,7 +263,7 @@ const Matches: Match[] = [
     },
     {
         id: 27,
-        matchDate: new Date("2024-06-24T20:00:00.000Z"),
+        matchDate: new Date("2024-06-24T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Leipzig',
@@ -273,7 +273,7 @@ const Matches: Match[] = [
     },
     {
         id: 28,
-        matchDate: new Date("2024-06-24T20:00:00.000Z"),
+        matchDate: new Date("2024-06-24T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Düsseldorf',
@@ -283,7 +283,7 @@ const Matches: Match[] = [
     },
     {
         id: 29,
-        matchDate: new Date("2024-06-25T17:00:00.000Z"),
+        matchDate: new Date("2024-06-25T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Berlin',
@@ -293,7 +293,7 @@ const Matches: Match[] = [
     },
     {
         id: 30,
-        matchDate: new Date("2024-06-25T17:00:00.000Z"),
+        matchDate: new Date("2024-06-25T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Dortmund',
@@ -303,7 +303,7 @@ const Matches: Match[] = [
     },
     {
         id: 31,
-        matchDate: new Date("2024-06-25T20:00:00.000Z"),
+        matchDate: new Date("2024-06-25T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Cologne',
@@ -313,7 +313,7 @@ const Matches: Match[] = [
     },
     {
         id: 32,
-        matchDate: new Date("2024-06-25T20:00:00.000Z"),
+        matchDate: new Date("2024-06-25T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Munich',
@@ -323,7 +323,7 @@ const Matches: Match[] = [
     },
     {
         id: 33,
-        matchDate: new Date("2024-06-26T17:00:00.000Z"),
+        matchDate: new Date("2024-06-26T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Frankfurt',
@@ -333,7 +333,7 @@ const Matches: Match[] = [
     },
     {
         id: 34,
-        matchDate: new Date("2024-06-26T17:00:00.000Z"),
+        matchDate: new Date("2024-06-26T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Stuttgart',
@@ -343,7 +343,7 @@ const Matches: Match[] = [
     },
     {
         id: 35,
-        matchDate: new Date("2024-06-26T20:00:00.000Z"),
+        matchDate: new Date("2024-06-26T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Hamburg',
@@ -353,7 +353,7 @@ const Matches: Match[] = [
     },
     {
         id: 36,
-        matchDate: new Date("2024-06-26T20:00:00.000Z"),
+        matchDate: new Date("2024-06-26T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Gelsenkirchen',
@@ -363,7 +363,7 @@ const Matches: Match[] = [
     },
     {
         id: 37,
-        matchDate: new Date("2024-06-29T17:00:00.000Z"),
+        matchDate: new Date("2024-06-29T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Berlin',
@@ -373,7 +373,7 @@ const Matches: Match[] = [
     },
     {
         id: 38,
-        matchDate: new Date("2024-06-29T20:00:00.000Z"),
+        matchDate: new Date("2024-06-29T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Dortmund',
@@ -383,7 +383,7 @@ const Matches: Match[] = [
     },
     {
         id: 39,
-        matchDate: new Date("2024-06-30T17:00:00.000Z"),
+        matchDate: new Date("2024-06-30T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Gelsenkirchen',
@@ -393,7 +393,7 @@ const Matches: Match[] = [
     },
     {
         id: 40,
-        matchDate: new Date("2024-06-30T20:00:00.000Z"),
+        matchDate: new Date("2024-06-30T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Cologne',
@@ -403,7 +403,7 @@ const Matches: Match[] = [
     },
     {
         id: 41,
-        matchDate: new Date("2024-07-01T17:00:00.000Z"),
+        matchDate: new Date("2024-07-01T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Düsseldorf',
@@ -413,7 +413,7 @@ const Matches: Match[] = [
     },
     {
         id: 42,
-        matchDate: new Date("2024-07-01T20:00:00.000Z"),
+        matchDate: new Date("2024-07-01T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Frankfurt',
@@ -423,7 +423,7 @@ const Matches: Match[] = [
     },
     {
         id: 43,
-        matchDate: new Date("2024-07-02T17:00:00.000Z"),
+        matchDate: new Date("2024-07-02T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Munich',
@@ -433,7 +433,7 @@ const Matches: Match[] = [
     },
     {
         id: 44,
-        matchDate: new Date("2024-07-02T20:00:00.000Z"),
+        matchDate: new Date("2024-07-02T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Leipzig',
@@ -443,7 +443,7 @@ const Matches: Match[] = [
     },
     {
         id: 45,
-        matchDate: new Date("2024-07-05T17:00:00.000Z"),
+        matchDate: new Date("2024-07-05T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Stuttgart',
@@ -453,7 +453,7 @@ const Matches: Match[] = [
     },
     {
         id: 46,
-        matchDate: new Date("2024-07-05T20:00:00.000Z"),
+        matchDate: new Date("2024-07-05T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Hamburg',
@@ -463,7 +463,7 @@ const Matches: Match[] = [
     },
     {
         id: 47,
-        matchDate: new Date("2024-07-06T17:00:00.000Z"),
+        matchDate: new Date("2024-07-06T17:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Düsseldorf',
@@ -473,7 +473,7 @@ const Matches: Match[] = [
     },
     {
         id: 48,
-        matchDate: new Date("2024-07-06T20:00:00.000Z"),
+        matchDate: new Date("2024-07-06T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Berlin',
@@ -483,7 +483,7 @@ const Matches: Match[] = [
     },
     {
         id: 49,
-        matchDate: new Date("2024-07-09T20:00:00.000Z"),
+        matchDate: new Date("2024-07-09T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Munich',
@@ -493,7 +493,7 @@ const Matches: Match[] = [
     },
     {
         id: 50,
-        matchDate: new Date("2024-07-10T20:00:00.000Z"),
+        matchDate: new Date("2024-07-10T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Dortmund',
@@ -503,7 +503,7 @@ const Matches: Match[] = [
     },
     {
         id: 51,
-        matchDate: new Date("2024-07-14T20:00:00.000Z"),
+        matchDate: new Date("2024-07-14T20:00:00.000+02:00"),
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Berlin',
