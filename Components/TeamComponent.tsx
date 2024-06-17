@@ -9,12 +9,12 @@ type Props = {
 }
 
 function TeamComponent({team}: Props) {
-  const divClassName = "flex flex-col items-center bg-inherit"
+  const divClassName = "flex flex-col items-center bg-inherit hover:bg-slate-600 p-2"
   if(!team){
     return <div className={divClassName}>Team not found</div>
 }
   return (
-    <Link href={`/team/${team.id}`} className={divClassName}>{team.name}<Image src={team.icon_url} alt={`Flag of ${team.name}`} height={30} width={30} /></Link>
+    <Link href={`/team/${team.id}`} className={divClassName}>{team.name}<Image src={team.iconUrl} alt={`Flag of ${team.name}`} height={30} width={30} /></Link>
   )
 }
 
