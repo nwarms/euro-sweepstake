@@ -10,9 +10,7 @@ import prisma from "@/lib/prisma";
 export default async function Page({ params }: { params: { id: string } }) {
     const id = params.id;
     const team = await prisma.team.findFirst({
-        where: {
-            OR: [{ id: parseInt(id) }, { name: id }]
-        },
+        where: {id: parseInt(id)},
         include: {
             teamAssigned: {
                 include: {
