@@ -14,7 +14,7 @@ export default async function Home() {
       <div className='flex flex-row gap-5'>
         <div className='w-30% flex flex-col'>
           <div>
-            <h2>Countries</h2>
+            <h2>Teams</h2>
             <ul>
               <Grid>
                 {teams.map(team => {

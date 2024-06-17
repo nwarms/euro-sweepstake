@@ -1,6 +1,7 @@
 'use client';
 import { Team  } from "@prisma/client";
 import Image from "next/image";
+import Link from "next/link";
 import React from 'react'
 
 type Props = {
@@ -13,7 +14,7 @@ function TeamComponent({team}: Props) {
     return <div className={divClassName}>Team not found</div>
 }
   return (
-    <div className={divClassName} >{team.name}<Image src={team.icon_url} alt={`Flag of ${team.name}`} height={30} width={30} /></div>
+    <Link href={`/team/${team.id}`} className={divClassName}>{team.name}<Image src={team.icon_url} alt={`Flag of ${team.name}`} height={30} width={30} /></Link>
   )
 }
 
