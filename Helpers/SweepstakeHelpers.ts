@@ -52,8 +52,27 @@ export async function writeUserMatches(userTeamMap: Map<Team, User[]>, deleteExi
         const team = entry[0];
         const users = entry[1];
         users.map(async user => {
-            usersUpdated.push(await WriteUserMatch(user, team))
+            usersUpdated.push((await WriteUserMatch(user, team)));
         });
+    }
+    return usersUpdated;
+}
+
+export async function writeSeedUserMatches(userTeamMap: Map<Team, string>, deleteExisting: boolean = false): Promise<User[]> {
+    const currentMatches = await prisma.teamAssigned.findMany();
+    if (currentMatches.length && deleteExisting) {
+        await prisma.teamAssigned.deleteMany();
+    }
+    if (currentMatches.length && !deleteExisting) {
+        return [];
+    }
+    const usersUpdated:User[] = [];
+    for (let entry of userTeamMap) {
+        const team = entry[0];
+        const user = entry[1];
+        const dbTeam = await prisma.team.findFirstOrThrow({where:{name:team.name}});
+        const dbuser = await prisma.user.findFirstOrThrow({where:{username:user}});
+        usersUpdated.push((await WriteUserMatch(dbuser, dbTeam)));
     }
     return usersUpdated;
 }
