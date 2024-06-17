@@ -607,8 +607,8 @@ const Matches: Match[] = [
     {
         id: 10,
         matchDate: new Date("2024-06-17T19:00:00.000Z"),
-        homeTeamScore: -1,
-        awayTeamScore: -1,
+        homeTeamScore: 0,
+        awayTeamScore: 1,
         location: 'Düsseldorf',
         homeTeamId: 2,
         awayTeamId: 8,
