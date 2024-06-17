@@ -42,14 +42,12 @@ model Group {
   id           Int         @id @default(autoincrement())
   name         String
   teams        Team[]
-  standings    Standings[]
 }
 
 model Stage {
   id            Int             @id @default(autoincrement())
   name          String
   matches       Match[]
-  Qualification Qualification[]
 }
 
 model Match {
