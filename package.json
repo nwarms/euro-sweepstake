@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "resetDb": "npx prisma db push --force-reset && npx prisma db seed"
+    "resetDb": "npx prisma db push --force-reset && npx prisma db seed",
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.13.0",
