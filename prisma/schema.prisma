@@ -22,8 +22,8 @@ model User {
 model Team {
   id            Int             @id @default(autoincrement())
   name          String          @unique
-  icon_url      String
-  team_assigned TeamAssigned[]
+  iconUrl      String
+  teamAssigned TeamAssigned[]
   groupId       Int?
   group         Group?          @relation(fields: [groupId], references: [id])
   homeMatches   Match[]         @relation("HomeMatches")
@@ -34,10 +34,10 @@ model Team {
 
 model TeamAssigned {
   id      Int  @id @default(autoincrement())
-  user    User @relation(fields: [user_id], references: [id])
-  user_id Int
-  team    Team @relation(fields: [team_id], references: [id])
-  team_id Int
+  user    User @relation(fields: [userId], references: [id])
+  userId Int
+  team    Team @relation(fields: [teamId], references: [id])
+  teamId Int
 }
 
 model Group {
