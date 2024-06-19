@@ -1,16 +1,17 @@
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import MatchComponent from "@/Components/MatchComponent";
-import { MatchFull, TeamAssignedFull } from "@/Types/prismaExtendedTypes";
+import { GroupWithTeamsIncludes, MatchFull, TeamAssignedFull } from "@/Types/prismaExtendedTypes";
 import UserComponent from "@/Components/UserComponent";
 import { getAllMatchesForTeam, sortMatches } from "@/Helpers/MatchHelper";
 import prisma from "@/lib/prisma";
+import { GroupTable } from "@/Components/GroupTable";
 
 
 export default async function Page({ params }: { params: { id: string } }) {
     const id = params.id;
     const team = await prisma.team.findFirst({
-        where: {id: parseInt(id)},
+        where: { id: parseInt(id) },
         include: {
             teamAssigned: {
                 include: {
@@ -19,9 +20,7 @@ export default async function Page({ params }: { params: { id: string } }) {
                 }
             },
             group: {
-                include: {
-                    teams: true
-                }
+                include: GroupWithTeamsIncludes
             },
             homeMatches: {
                 include: {
@@ -59,11 +58,12 @@ export default async function Page({ params }: { params: { id: string } }) {
                     <MatchComponent match={match} key={match.id} />
                 )}
             </div>
-            <h2>{team.group?.name}</h2>
             <h2>Users</h2>
             <ul>
                 {team.teamAssigned.map((teamAssigned: TeamAssignedFull) => <UserComponent user={teamAssigned.user} key={teamAssigned.id} />)}
             </ul>
+            {team.group !== null ? <GroupTable group={team.group}/> : ''}
+            
         </div>
     );
 }
