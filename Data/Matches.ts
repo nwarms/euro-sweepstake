@@ -617,8 +617,8 @@ const Matches: Match[] = [
     {
         id: 11,
         matchDate: new Date("2024-06-18T16:00:00.000Z"),
-        homeTeamScore: -1,
-        awayTeamScore: -1,
+        homeTeamScore: 3,
+        awayTeamScore: 1,
         location: 'Dortmund',
         homeTeamId: 23,
         awayTeamId: 9,
@@ -627,8 +627,8 @@ const Matches: Match[] = [
     {
         id: 12,
         matchDate: new Date("2024-06-18T19:00:00.000Z"),
-        homeTeamScore: -1,
-        awayTeamScore: -1,
+        homeTeamScore: 2,
+        awayTeamScore: 1,
         location: 'Leipzig',
         homeTeamId: 15,
         awayTeamId: 5,
@@ -637,8 +637,8 @@ const Matches: Match[] = [
     {
         id: 13,
         matchDate: new Date("2024-06-19T13:00:00.000Z"),
-        homeTeamScore: -1,
-        awayTeamScore: -1,
+        homeTeamScore: 2,
+        awayTeamScore: 2,
         location: 'Hamburg',
         homeTeamId: 4,
         awayTeamId: 1,
