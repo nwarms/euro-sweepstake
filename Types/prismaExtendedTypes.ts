@@ -23,4 +23,46 @@ export type TeamWithFullMatches = Prisma.TeamGetPayload<{
     }
 }>;
 
-export type TeamAssignedFull = Prisma.TeamAssignedGetPayload<{include:{user:true, team:true}}>;
+export type TeamAssignedFull = Prisma.TeamAssignedGetPayload<{ include: { user: true, team: true } }>;
+export const GroupWithTeamsIncludes = {
+    teams: {
+        include: {
+            homeMatches: {
+                include: {
+                    homeTeam: true,
+                    awayTeam: true,
+                    stage: true
+                }
+            },
+            awayMatches: {
+                include: {
+                    homeTeam: true,
+                    awayTeam: true,
+                    stage: true
+                }
+            }
+        }
+    }
+}
+export type GroupWithTeams = Prisma.GroupGetPayload<{
+    include: {
+        teams: {
+            include: {
+                homeMatches: {
+                    include: {
+                        homeTeam: true,
+                        awayTeam: true,
+                        stage: true
+                    }
+                },
+                awayMatches: {
+                    include: {
+                        homeTeam: true,
+                        awayTeam: true,
+                        stage: true
+                    }
+                }
+            }
+        }
+    }
+}>;
