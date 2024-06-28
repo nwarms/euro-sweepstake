@@ -1,6 +1,7 @@
 import { Prisma } from '@prisma/client'
 export type MatchWithTeams = Prisma.MatchGetPayload<{ include: { homeTeam: true, awayTeam: true } }>;
 export type MatchWithStage = Prisma.MatchGetPayload<{ include: { stage: true } }>;
+export type MatchWithUsersAssigned = MatchWithStage & Prisma.MatchGetPayload<{ include: { homeTeam: { include: { teamAssigned: { include: { user: true } } } }, awayTeam: { include: { teamAssigned: { include: { user: true } } } } } }>;
 export type MatchFull = MatchWithStage & MatchWithTeams;
 
 export type TeamWithMatches = Prisma.TeamGetPayload<{ include: { homeMatches: true, awayMatches: true } }>;
