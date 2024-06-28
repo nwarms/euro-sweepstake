@@ -12,6 +12,7 @@ function Navbar({}: Props) {
         <NavbarLink href='/match'>Matches</NavbarLink>
         <NavbarLink href='/user'>Users</NavbarLink>
         <NavbarLink href='/group'>Groups</NavbarLink>
+        <NavbarLink href='/knockout'>Knockout Stages</NavbarLink>
     </nav>
   )
 }
