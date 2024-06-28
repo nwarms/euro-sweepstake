@@ -367,8 +367,8 @@ const Matches: Match[] = [
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Berlin',
-        homeTeamId: 0,
-        awayTeamId: 0,
+        homeTeamId: 22,
+        awayTeamId: 12,
         stageId: 2
     },
     {
@@ -377,8 +377,8 @@ const Matches: Match[] = [
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Dortmund',
-        homeTeamId: 0,
-        awayTeamId: 0,
+        homeTeamId: 10,
+        awayTeamId: 6,
         stageId: 2
     },
     {
@@ -387,8 +387,8 @@ const Matches: Match[] = [
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Gelsenkirchen',
-        homeTeamId: 0,
-        awayTeamId: 0,
+        homeTeamId: 7,
+        awayTeamId: 19,
         stageId: 2
     },
     {
@@ -397,8 +397,8 @@ const Matches: Match[] = [
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Cologne',
-        homeTeamId: 0,
-        awayTeamId: 0,
+        homeTeamId: 21,
+        awayTeamId: 9,
         stageId: 2
     },
     {
@@ -407,8 +407,8 @@ const Matches: Match[] = [
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Düsseldorf',
-        homeTeamId: 0,
-        awayTeamId: 0,
+        homeTeamId: 8,
+        awayTeamId: 3,
         stageId: 2
     },
     {
@@ -417,8 +417,8 @@ const Matches: Match[] = [
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Frankfurt',
-        homeTeamId: 0,
-        awayTeamId: 0,
+        homeTeamId: 15,
+        awayTeamId: 20,
         stageId: 2
     },
     {
@@ -427,8 +427,8 @@ const Matches: Match[] = [
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Munich',
-        homeTeamId: 0,
-        awayTeamId: 0,
+        homeTeamId: 16,
+        awayTeamId: 13,
         stageId: 2
     },
     {
@@ -437,8 +437,8 @@ const Matches: Match[] = [
         homeTeamScore: -1,
         awayTeamScore: -1,
         location: 'Leipzig',
-        homeTeamId: 0,
-        awayTeamId: 0,
+        homeTeamId: 2,
+        awayTeamId: 23,
         stageId: 2
     },
     {
